@@ -8,6 +8,12 @@ This image uses /www directory for your page files, so you need to mount it.
 ```
 docker run --name myXampp -p 41061:22 -p 41062:80 -d -v ~/my_web_pages:/www tomsik68/xampp
 ```
+**To run from dockerfile, you must first create image from it** <br>
+**Run:**
+* `sudo docker build path/to/dockerfile`
+* find image with `sudo docker image ls`
+* `docker run --name myXampp -p 41061:22 -p 41062:80 -d -v ~/my_web_pages:/www \<IMAGEID\>`
+
 The command above will expose the SSH server on port 41061 and HTTP server on port 41062.    
 Feel free to use your own name for the container...
 
